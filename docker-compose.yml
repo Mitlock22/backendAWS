@@ -25,16 +25,16 @@ services:
   
   emqx:
     container_name: emqx
-    image: emqx/emqx:4.4.11
+    image: emqx/emqx:4.4.10
     restart: always
     ports:
       - 18083:18083
-#      - 18084:18084
-#      - 1883:1883
-#      - 8883:8883
       - 8083:8083
       - 8084:8084
 #      - 8085:8081
+#      - 18084:18084
+#      - 1883:1883
+#      - 8883:8883
    # volumes:
    #   - vol-emqx-data:/opt/emqx/data
    #   - vol-emqx-etc:/opt/emqx/etc
@@ -44,7 +44,7 @@ services:
       - mongo
     environment:      
       EMQX_NAME: pam-ml
-      EMQX_HOST: 127.0.0.1
+#      EMQX_HOST: 127.0.0.1
       TZ: "America/Mexico_City"
       # DEFAULT DASH PASS
       EMQX_DASHBOARD__DEFAULT_USER__PASSWORD: "echo1987"
