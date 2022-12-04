@@ -21,9 +21,11 @@ services:
       - ./mongodata:/data/db
     ports:
       - 27017:27017
+  
+  
   emqx:
     container_name: emqx
-    image: emqx/emqx:4.2.3
+    image: emqx/emqx:4.4.11
     restart: always
     ports:
       - 18083:18083
@@ -33,7 +35,6 @@ services:
       - 8083:8083
       - 8084:8084
 #      - 8085:8081
-
    # volumes:
    #   - vol-emqx-data:/opt/emqx/data
    #   - vol-emqx-etc:/opt/emqx/etc
@@ -41,8 +42,7 @@ services:
    # 
     links:
       - mongo
-    environment: 
-      
+    environment:      
       EMQX_NAME: pam-ml
       EMQX_HOST: 127.0.0.1
       TZ: "America/Mexico_City"
