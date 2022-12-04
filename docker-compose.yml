@@ -43,11 +43,8 @@ services:
       - mongo
     environment: 
       
-      EMQX_NAME: pam-ml
-      EMQX_HOST: 127.0.0.1
-      TZ: "America/Mexico_City"
-      # DEFAULT DASH PASS
-      EMQX_DASHBOARD__DEFAULT_USER__PASSWORD: "echo1987"
+      EMQX_NAME: pam-''''
+            EMQX_DASHBOARD__DEFAULT_USER__PASSWORD: "echo1987"
 
       EMQX_ALLOW_ANONYMOUS: "true"  # false para habilitar autenticacion con mongo
       EMQX_NOMATCH: "deny"
@@ -73,7 +70,7 @@ services:
 
       ## Enable ACL query.
       #Access control list
-      EMQX_AUTH__MONGO__ACL_QUERY: "on"
+      EMQX_AUTH__MONGO__ACL_QUERY: "off"   #On para activar validacion por base de datos
       EMQX_AUTH__MONGO__ACL_QUERY__COLLECTION: "emqxauthrules"
       EMQX_AUTH__MONGO__ACL_QUERY__SELECTOR: "username=%u"
 
